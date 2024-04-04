@@ -1,6 +1,5 @@
 from openai import OpenAI
 import streamlit as st
-from flask import request
 
 st.title("ChatGPT-like clone")
 
@@ -20,8 +19,8 @@ def display_messages():
             st.markdown(message["content"])
 
 # Retrieve prospect ID and sales rep ID from the URL parameters
-prospect_id = request.args.get('prospect_id')
-sales_rep_id = request.args.get('sales_rep_id')
+prospect_id = st.experimental_get_query_params().get('prospect_id', [None])[0]
+sales_rep_id = st.experimental_get_query_params().get('sales_rep_id', [None])[0]
 
 # Display prospect ID and sales rep ID
 st.write(f"Prospect ID: {prospect_id}")
