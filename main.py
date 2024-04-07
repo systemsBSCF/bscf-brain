@@ -24,7 +24,7 @@ prospect_id = st.query_params['prospect_id']
 
 # Display prospect ID and sales rep ID
 st.write(f"Prospect ID: {prospect_id}")
-st.write(f"Sales Rep ID: {sales_rep_id}")
+# st.write(f"Sales Rep ID: {sales_rep_id}")
 
 # Display chat history
 display_messages()
