@@ -1,5 +1,8 @@
 from openai import OpenAI
 import streamlit as st
+from get_context import get_context, JSON_data
+
+system_message = f"you are a helful bot that help Users with their queries given the context of a prospact. the context fpr the prospact is: {JSON_data}"
 
 st.title("ChatGPT-like clone")
 
