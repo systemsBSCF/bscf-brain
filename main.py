@@ -25,9 +25,6 @@ def display_messages():
             st.markdown(message["content"])
 
 # Retrieve prospect ID and sales rep ID from the URL parameters
-prospect_id = st.query_params.get('prospect_id', [None])[0]
-sales_rep_id = st.query_params.get('sales_rep_id', [None])[0]
-data = fetch_data_from_backend(prospect_id, sales_rep_id)
 # Display prospect ID and sales rep ID
 st.write(f"Prospect ID: {prospect_id}")
 st.write(f"Sales Rep ID: {sales_rep_id}")
