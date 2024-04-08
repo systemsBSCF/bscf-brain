@@ -2,7 +2,7 @@ import json
 from openai import OpenAI
 import streamlit as st
 from fetch_data import fetch_data_from_backend
-from utils.get_context import get_context
+from get_context import get_context
 
 prospect_id = st.query_params["prospect_id"]
 
