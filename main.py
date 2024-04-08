@@ -3,8 +3,8 @@ import streamlit as st
 from fetch_data import fetch_data_from_backend
 
 
-prospect_id = st.query_params().get('prospect_id', [None])[0]
-sales_rep_id = st.query_params().get('sales_rep_id', [None])[0]
+prospect_id = st.query_params.get('prospect_id', [None])[0]
+sales_rep_id = st.query_params.get('sales_rep_id', [None])[0]
 data = fetch_data_from_backend(prospect_id, sales_rep_id)
 system_message = f"you are a helful bot that help Users with their queries given the context of a prospact. the context fpr the prospact is: {data}"
 
