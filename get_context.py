@@ -5,10 +5,12 @@ def get_context(JSON_data):
     client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
     messages = [
         {"role": "system", "content": """
-         You are a function designed to process JSON data as input and produce a narrative in plain English based on that data. 
-         This narrative serves as context within a chatbot application developed for BlueSky Capital Funding, 
-         a Merchant Cash Advance (MCA) loan company. The context you generate will be integrated into the chatbot's system messages. 
-         The primary goal of this chatbot application is to assist sales representatives in crafting effective emails to prospective clients.
+        You are tasked with interpreting JSON data to generate concise narratives in plain English.
+        These narratives will be utilized as context within a chatbot application for BlueSky Capital Funding, 
+        a company specializing in Merchant Cash Advance (MCA) loans. 
+        Your generated context is crucial for assisting sales representatives in composing targeted emails to potential clients.
+        Your response should exclusively contain the context derived from the provided JSON data. 
+        Structure your output to first present the prospect's general information, followed by a narrative crafted from the JSON data. Aim for a medium-length output that is neither too brief nor overly extended.
           
          """},
         {"role": "user", "content": JSON_data}
