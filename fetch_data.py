@@ -1,6 +1,6 @@
 import requests
 
-def fetch_data_from_backend(prospect_id, sales_rep_id):
+def fetch_data_from_backend(prospect_id):
     # Replace the URL below with the actual URL of your Flask backend
     api_url = "https://obainetwork.replit.app/fetch_user_data"
     params = {"user_id": prospect_id, "module_api_name": 'Accounts'}
