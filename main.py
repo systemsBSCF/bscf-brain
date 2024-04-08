@@ -1,12 +1,17 @@
+import json
 from openai import OpenAI
 import streamlit as st
 from fetch_data import fetch_data_from_backend
-
+from utils.get_context import get_context
 
 prospect_id = st.query_params["prospect_id"]
-# sales_rep_id = st.query_params.get('sales_rep_id', [None])[0]
+
 data = fetch_data_from_backend(prospect_id)
-system_message = f"you are a helful bot that help Users with their queries given the context of a prospact. the context fpr the prospact is: {data}"
+# convert the varibable `data` to string from JSON
+data1 = json.dumps(data)
+data2 = get_context(data1)
+
+system_message = f"you are a helful bot that help Users with their queries given the context of a prospact. the context fpr the prospact is: {data2}"
 
 st.title("ChatGPT-like clone")
 # Initialize the OpenAI client with your API key
@@ -25,6 +30,7 @@ def display_messages():
             st.markdown(message["content"])
 
 # Retrieve prospect ID and sales rep ID from the URL parameters
+
 # Display prospect ID and sales rep ID
 st.write(f"Prospect ID: {prospect_id}")
 # st.write(f"Sales Rep ID: {sales_rep_id}")
