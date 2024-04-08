@@ -13,7 +13,7 @@ data2 = get_context(data1)
 
 system_message = f"you are a helpful bot that help Users (sales reps) write effective emails given the context of a prospact. the context opr the prospact is: {data2}"
 
-st.title("ChatGPT-like clone")
+st.title("BlueSky email rewriter")
 # Initialize the OpenAI client with your API key
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
