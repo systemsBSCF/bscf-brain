@@ -11,7 +11,7 @@ data = fetch_data_from_backend(prospect_id)
 data1 = json.dumps(data)
 data2 = get_context(data1)
 
-system_message = f"you are a helpful bot that help Users with their queries given the context of a prospact. the context opr the prospact is: {data2}"
+system_message = f"you are a helpful bot that help Users (sales reps) write effective emails given the context of a prospact. the context opr the prospact is: {data2}"
 
 st.title("ChatGPT-like clone")
 # Initialize the OpenAI client with your API key
